@@ -19,6 +19,16 @@ class CreateUsersTable extends Migration
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
+            $table->boolean('status')->default(false);
+            $table->string('telephone')->default('vide');
+            $table->string('avatar')->default('default.png');
+            $table->string('profession')->default('vide');
+            $table->string('competences')->default('vide');
+            $table->string('ville')->default('vide');
+            $table->string('adresse')->default('vide');
+            $table->string('description')->default('vide');
+            $table->integer('count_note')->default(0);
+            $table->boolean('is_admin')->default(false);
             $table->rememberToken();
             $table->timestamps();
         });

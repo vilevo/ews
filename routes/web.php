@@ -17,6 +17,11 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Auth::routes();
+Auth::routes(['verify' => true]);
 
-Route::get('/home', 'HomeController@index')->name('home');
+// Route::get('/home', 'HomeController@index')->name('home');
+Route::get('user/home', 'HomeController@index')->name('home');
+Route::get('user/setup-profil', 'FirststepController@index')->name('setup_profil');
+
+//routes pour formulaire auth->user
+Route::post('user/first-informations-update', 'FirststepController@update_info');
